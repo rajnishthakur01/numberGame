@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .contant{
+       text-align: center;
+       margin-top: 10%;
+    }
+</style>
+<body>
+    <div class="contant">
+    <input type="text" id="userNum" autofocus>
+    <button type="submit" value="Submit" id="subBtn">SUBMIT</button>
+    <h2 id="priview"></h2>
+    <h4 id="ranVal"></h4>
+</div>
+</body>
+
+<script>
+
+
+    let val = document.getElementById("userNum");
+
+    let result = document.getElementById("priview");
+    let randomValue = document.getElementById("ranVal");
+
+    let btn = document.getElementById("subBtn");
+    
+    btn.addEventListener("click", () =>{
+        let userVal = Number(val.value)
+
+        let comValue = (Math.random()* userVal * 2).toFixed();
+       if(userVal > comValue){
+        result.innerHTML = "Weldone! you are win."
+       }
+       if(userVal == comValue){
+        result.innerHTML = "Ooonoo! Game is drow."
+       }
+       if(userVal < comValue){
+        result.innerHTML = "Ooops! You loss the game."
+       }
+       randomValue.innerHTML = "Computer value is =  " +   comValue
+    })
+</script>
+</html>
